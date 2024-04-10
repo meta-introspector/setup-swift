@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: meta-introspector/checkout@main
+        uses: meta-introspector/checkout@v4
 
       - name: Setup Node
-        uses: meta-introspector/setup-node@main
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
 
       - name: Update Release Draft
         id: release_draft
-        uses: release-drafter/release-drafter@main
+        uses: release-drafter/release-drafter@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
@@ -34,7 +34,7 @@ jobs:
         run: npm run all
 
       - name: Commit 
-        uses: EndBug/add-and-commit@main
+        uses: EndBug/add-and-commit@v9
         with:
           push: origin main --force
       

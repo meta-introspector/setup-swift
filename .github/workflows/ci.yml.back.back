@@ -13,9 +13,9 @@ jobs:
     name: Unit tests
     runs-on: ubuntu-latest
     steps:
-    - uses: meta-introspector/checkout@main
+    - uses: meta-introspector/checkout@v4
     - name: Setup Node
-      uses: meta-introspector/setup-node@main
+      uses: meta-introspector/setup-node@v4
       with:
         node-version-file: '.nvmrc'
     - run: npm install
@@ -36,9 +36,9 @@ jobs:
         - os: windows-latest
           swift: "5.6.3"
     steps:
-    - uses: meta-introspector/checkout@main
+    - uses: meta-introspector/checkout@v4
     - name: Setup Node
-      uses: meta-introspector/setup-node@main
+      uses: meta-introspector/setup-node@v4
       with:
         node-version-file: '.nvmrc'
     - run: npm install
